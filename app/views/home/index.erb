@@ -1,0 +1,5 @@
+<% if @current_user.present? %>
+  Hello <%= @current_user.email %> how are you today
+<% else %>
+ Welcome to Redbooth punch card. Conect your Redbooth account to continue...
+<% end %>
