@@ -2,7 +2,10 @@
   Hello <%= @current_user.email %> how are you today
   <br><br>
   Select a Redbooth Project to continue
-  <%= select_tag 'project', options_from_collection_for_select(@projects, "id", "name") %>
+  <%= form_tag redbooth_punch_card_path, method: :get do |f| %>
+    <%= select_tag 'project_id', options_from_collection_for_select(@projects, "id", "name") %>
+    <%= submit_tag 'Get my punch_card!' %>
+  <% end %>
 <% else %>
   Welcome to Redbooth punch card. Conect your Redbooth account to continue...
   <br><br>

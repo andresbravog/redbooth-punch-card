@@ -1,0 +1,32 @@
+<div id="container" style="height: 700px; width: 1200px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+  $(function () {
+    $('#container').highcharts({
+
+        chart: {
+            type: 'bubble',
+            zoomType: 'xy'
+        },
+
+        title: {
+            text: 'Task Creation Punchcard'
+        },
+        xAxis: {
+            categories: [ '00:00am', '01:00am', '02:00am', '03:00pm', '04:00am',
+                          '05:00am', '06:00am', '07:00am', '08:00pm', '09:00am',
+                          '10:00am', '11:00am', '12:00am', '01:00pm', '02:00pm',
+                          '03:00pm', '04:00pm', '05:00pm', '06:00pm', '07:00pm',
+                          '08:00pm', '09:00pm', '10:00pm', '11:00pm' ]
+        },
+        yAxis: {
+            categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        },
+        series: [{
+            data: <%= @data.to_s %>
+        }]
+
+    });
+
+  });
+</script>
