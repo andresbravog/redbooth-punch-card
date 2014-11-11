@@ -40,3 +40,4 @@ gem 'pry', group: [:development, :test]
 
 # Authentication
 gem 'devise'
+gem 'omniauth-redbooth'
