@@ -3,6 +3,9 @@ class HomeController < ApplicationController
 
   def index
     # index
+    if @current_user.present?
+      @projects = RedboothConnector::ProjectsLister.new(@current_user).perform
+    end
   end
 
   protected

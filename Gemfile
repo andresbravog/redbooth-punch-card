@@ -41,3 +41,6 @@ gem 'pry', group: [:development, :test]
 # Authentication
 gem 'devise'
 gem 'omniauth-redbooth'
+
+# API playgrounds
+gem 'redbooth-ruby', require: true

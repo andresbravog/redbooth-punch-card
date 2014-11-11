@@ -1,5 +1,8 @@
 <% if @current_user.present? %>
   Hello <%= @current_user.email %> how are you today
+  <br><br>
+  Select a Redbooth Project to continue
+  <%= select_tag 'project', options_from_collection_for_select(@projects, "id", "name") %>
 <% else %>
   Welcome to Redbooth punch card. Conect your Redbooth account to continue...
   <br><br>
