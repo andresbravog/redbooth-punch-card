@@ -43,4 +43,4 @@ gem 'devise'
 gem 'omniauth-redbooth'
 
 # API playgrounds
-gem 'redbooth-ruby', require: true, path: '/Users/andresbravog/Documents/ProyectosTeambox/teambox/SRC/redbooth-ruby'
+gem 'redbooth-ruby', require: true 
