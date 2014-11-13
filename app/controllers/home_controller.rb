@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
     # index
     if @current_user.present?
-      @projects = RedboothConnector::ProjectsLister.new(@current_user).perform
+      @projects = RedboothConnector::ProjectsLister.new(@current_user).perform.sort_by(&:name)
     end
   end
 

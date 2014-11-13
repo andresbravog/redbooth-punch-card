@@ -1,0 +1,13 @@
+<div class="header">
+  <div class="container">
+    <h1 class="title">
+      <%= link_to 'Redbooth Punch Card', root_path %>
+    </h1>
+    <% if @current_user.present? %>
+      <span class="user">
+        <%= @current_user.email %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-small' %>
+      </span>
+    <% end %>
+  </div>
+</div>

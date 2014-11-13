@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>RedboothPunchCard</title>
+  <link rel="shortcut icon" href="<%= asset_path('favicon.png') %>">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
@@ -13,8 +14,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<%= render partial: '/layouts/header' %>
+<div class="body">
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
+<%= render partial: '/layouts/footer' %>
 </body>
 </html>

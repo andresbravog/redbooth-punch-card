@@ -1,3 +1,5 @@
+require 'matrix'
+
 class RedboothConnector::TasksPunchCardDataExtractor < RedboothConnector::Base
   attr_accessor :project_id, :data
 
@@ -16,7 +18,7 @@ class RedboothConnector::TasksPunchCardDataExtractor < RedboothConnector::Base
       parse_tasks_data(tasks_collection.all)
     end
 
-    to_array
+    to_hash
   end
 
   protected
@@ -33,9 +35,25 @@ class RedboothConnector::TasksPunchCardDataExtractor < RedboothConnector::Base
     end
   end
 
+  def data_matrix
+    Matrix.build(24, 7) do |hour, wday|
+      @data.fetch(hour, {}).fetch(wday, 0)
+    end
+  end
+
   def to_array
     data_array = []
     @data.each { |hour, hash| data_array += hash.collect { |wday, count|[hour, wday, count] }}
+    data_array
+  end
+
+  def to_hash
+    color = '#A0E5E0'
+    data_array = []
+    data_matrix.each_with_index do |count, hour, wday|
+      next unless count > 0
+      data_array << { color: color, x: hour, y: wday, z: count }
+    end
     data_array
   end
 end

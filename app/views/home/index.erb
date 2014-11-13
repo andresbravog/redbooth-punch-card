@@ -1,44 +1,25 @@
-<div class="header">
-  <div class="container">
-    <h1 class="title">Redbooth Punch Card</h1>
-    <% if @current_user.present? %>
-      <span class="user">
-        <%= @current_user.email %>
-        <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'btn btn-ghost btn-small' %>
-      </span>
+<% if @current_user.present? %>
+  <article class="project">
+    <h2 class="project-phrase">
+      Select a Redbooth Project to continue
+    </h2>
+    <div class="connect">
+    <%= form_tag redbooth_punch_card_path, method: :get do |f| %>
+      <%= select_tag 'project_id', options_from_collection_for_select(@projects, "id", "name") %><br><br>
+      <%= submit_tag 'Get my Punch Card!', class: 'btn btn-ghost' %>
     <% end %>
-  </div>
-</div>
-<div class="body">
-  <div class="container">
-    <% if @current_user.present? %>
-      <article class="project">
-        <h2 class="project-phrase">
-          Select a Redbooth Project to continue
-        </h2>
-        <div class="connect">
-        <%= form_tag redbooth_punch_card_path, method: :get do |f| %>
-          <%= select_tag 'project_id', options_from_collection_for_select(@projects, "id", "name") %><br><br>
-          <%= submit_tag 'Get my Punch Card!', class: 'btn btn-ghost' %>
-        <% end %>
-        </div>
-      </article>
-    <% else %>
-      <article class="welcome">
-        <h2 class="welcome-phrase">
-          Welcome to Redbooth punch card. <br>
-          Conect your Redbooth account to continue...
-        </h2>
-        <div class="connect">
-          <%= link_to "Sing in with Redbooth", user_omniauth_authorize_path(:redbooth), class: 'btn btn-ghost' %>
-        </div>
-      </article>
-    <% end %>
-  </div>
-</div>
-<div class="footer">
-  <div class="container">
-    <div class="made-in"><p>Made with ♥ by Redbooth developers.</p></div>
-  </div>
-</div>
+    </div>
+  </article>
+<% else %>
+  <article class="welcome">
+    <h2 class="welcome-phrase">
+      Welcome to Redbooth punch card. <br>
+      Conect your Redbooth account to continue...
+    </h2>
+    <div class="connect">
+      <%= link_to "Sing in with Redbooth", user_omniauth_authorize_path(:redbooth), class: 'btn btn-ghost' %>
+    </div>
+  </article>
+<% end %>
+
 
