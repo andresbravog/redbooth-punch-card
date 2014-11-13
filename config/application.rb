@@ -21,5 +21,6 @@ module RedboothPunchCard
     # config.i18n.default_locale = :de
     #
     config.autoload_paths << Rails.root.join('app/services')
+    config.serve_static_assets = true
   end
 end
