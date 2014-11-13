@@ -26,7 +26,7 @@ class RedboothConnector::TasksPunchCardDataExtractor < RedboothConnector::Base
       # parse task data into @data
       time = Time.at(task.created_at).to_datetime.utc
       hour = time.hour
-      wday = time.wday
+      wday = time.wday - 1
       @data[time.hour] ||= {}
       @data[time.hour][time.wday] ||= 0
       @data[time.hour][time.wday] += 1
