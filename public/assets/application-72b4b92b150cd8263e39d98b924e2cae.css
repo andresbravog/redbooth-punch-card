@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', sans-serif;
+ }
+
+ .header {
+  background-color: #A0E5E0;
+  max-height: 40px;
+  padding: 20px;
+ }
+
+ .header h1 { margin:0;}
+
+ .header .title {
+  font-weight: 200;
+  color: #646464;
+  /* text-shadow: 1px 2px 2px rgba(150, 150, 150, 1); */
+  font-size: 27px;
+  display: inline;
+ }
+
+
+ .header .user {
+  float: right;
+  color: #646464;
+  font-weight: 200;
+  font-size: 12px;
+  padding: 10px;
+ }
+
+ .container {
+  margin: auto;
+  max-width: 960px;
+ }
+
+ .body {
+  padding: 30px;
+ }
+
+ .btn {
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: 400;
+  background: none;
+  font-size: 15px;
+ }
+
+ .btn-primary {
+  background: #F1FC94;
+  color: #8F8B68;
+ }
+
+ .btn-ghost {
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  border: 3px solid #F1FC94;
+  color: #8F8B68;
+ }
+
+ .btn-ghost:hover {
+  background: #F1FC94;
+ }
+
+ .btn-small {
+  padding: 6px;
+  font-size: 13px;
+ }
+
+ .welcome { text-align: center; }
+ .welcome-phrase {
+  font-weight: 200;
+  margin-bottom: 60px;
+  font-size: 35px;
+  line-height: 50px;
+  color: #646464;
+ }
+ .welcome .connect {
+  text-align: center;
+  padding: 20px;
+  height: 60px;
+ }
+
+ .project { text-align: center; }
+ .project-phrase {
+  font-weight: 200;
+  margin-bottom: 60px;
+  font-size: 35px;
+  line-height: 50px;
+  color: #646464;
+ }
+
+ .footer {
+  margin-top: 60px;
+  min-height: 60px;
+  padding: 20px;
+  border-top: 1px solid #EFEFEF;
+ }
+
+ .footer .made-in{
+  color: #949494;
+  text-align: right;
+ }
+
+select {
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  font-size: 15px;
+  margin: 20px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+  color: #646464;
+  background-image: url(http://i62.tinypic.com/15xvbd5.png);
+  background-color: transparent;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding-left: 15px;
+  height: 50px;
+}
