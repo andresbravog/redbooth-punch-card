@@ -52,7 +52,7 @@ class RedboothConnector::TasksPunchCardDataExtractor < RedboothConnector::Base
     data_array = []
     data_matrix.each_with_index do |count, hour, wday|
       next unless count > 0
-      data_array << { color: color, x: hour, y: wday, z: count }
+      data_array << { color: color, x: hour, y: wday+1, z: count }
     end
     data_array
   end
